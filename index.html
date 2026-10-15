@@ -1,52 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Robotics Open Africa 2027 - WRO Zimbabwe</title>
+  <title>WRO Special Invitational Africa 2027 – Bulawayo, Zimbabwe</title>
+  <meta name="description" content="Africa's first and largest WRO Special Invitational – 1–3 July 2027, Bulawayo Exhibition Centre, Zimbabwe. 35+ countries, 1,000+ participants, 3 competition categories.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  
+
   <div class="bg-blob blob-1"></div>
   <div class="bg-blob blob-2"></div>
 
+  <!-- Navigation -->
   <header class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <a href="#"><img src="media/logo-dark.png" alt="WRO Zimbabwe"></a>
+        <a href="index.html"><img src="media/logo.png" alt="WRO Zimbabwe 2027"></a>
       </div>
       <nav class="nav-links">
+        <a href="#about">About</a>
         <a href="#theme">Theme</a>
-        <a href="#challenges">Challenges</a>
-        <a href="#event-details">Event Details</a>
-        <a href="#host">Host</a>
-        <a href="#hotels">Hotels</a>
+        <a href="#challenges">Categories</a>
+        <a href="side-events.html">Side Events</a>
+        <a href="sponsorship.html">Sponsorship</a>
+        <a href="#host">Host City</a>
       </nav>
       <div class="nav-actions">
-        <a href="#contact" class="btn-pill">
-          Register Now
+        <a href="sponsorship.html" class="btn-pill btn-pill--nav">
+          Partner With Us
           <div class="icon-badge"><i class="ph ph-arrow-up-right"></i></div>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Premium Hero Section with White Overlay -->
+  <!-- Hero -->
   <section class="hero" id="home">
     <video class="hero-video" autoplay loop muted playsinline>
       <source src="media/hero-video.mp4" type="video/mp4">
     </video>
-    <div class="hero-overlay"></div> <!-- NOW WHITE/LIGHT -->
+    <div class="hero-overlay"></div>
 
     <div class="hero-content fade-up">
-      <h1 class="hero-title">Robotics Open Africa <span class="text-gradient">2027</span></h1>
-      <p class="hero-subtitle">Bulawayo, Zimbabwe is proud to host thousands of young innovators, coaches, and industry leaders at one of the most important global STEM education events on the road to the South Africa Finals.</p>
-      
+      <div class="sparkle-badge" style="color:rgba(255,255,255,0.75); margin-bottom:1.5rem; justify-content:center;">
+        <i class="ph-fill ph-asterisk"></i> Africa's First &amp; Largest WRO Invitational
+      </div>
+      <h1 class="hero-title">WRO Special Invitational <span class="text-gradient">Africa 2027</span></h1>
+      <p class="hero-subtitle">Bulawayo, Zimbabwe &nbsp;·&nbsp; 1–3 July 2027 &nbsp;·&nbsp; 35+ African countries &nbsp;·&nbsp; 1,000+ participants</p>
+
       <div class="countdown" id="countdown">
         <div class="countdown-item"><span class="countdown-value" id="days">00</span><span class="countdown-label">Days</span></div>
         <div class="countdown-separator">:</div>
@@ -56,190 +64,259 @@
         <div class="countdown-separator">:</div>
         <div class="countdown-item"><span class="countdown-value" id="seconds">00</span><span class="countdown-label">Seconds</span></div>
       </div>
-      
+
       <div class="hero-buttons">
-        <a href="#theme" class="btn-pill" style="font-size: 1.2rem;">
-          Discover More
+        <a href="#about" class="btn-pill btn-pill--hero">
+          Discover the Event
           <div class="icon-badge"><i class="ph ph-arrow-down-right"></i></div>
+        </a>
+        <a href="sponsorship.html" class="btn-pill btn-pill--hero">
+          Partner With Us
+          <div class="icon-badge"><i class="ph ph-handshake"></i></div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Marquee with Asterisks -->
+  <!-- Marquee -->
   <div class="marquee-section">
     <div class="marquee-content">
-      <span>WRO ZIMBABWE</span> <i class="ph-fill ph-asterisk"></i> <span>ROBOTICS OPEN AFRICA</span> <i class="ph-fill ph-asterisk"></i> <span>BULAWAYO 2027</span> <i class="ph-fill ph-asterisk"></i> <span>ROAD TO SOUTH AFRICA</span> <i class="ph-fill ph-asterisk"></i>
-      <span>WRO ZIMBABWE</span> <i class="ph-fill ph-asterisk"></i> <span>ROBOTICS OPEN AFRICA</span> <i class="ph-fill ph-asterisk"></i> <span>BULAWAYO 2027</span> <i class="ph-fill ph-asterisk"></i> <span>ROAD TO SOUTH AFRICA</span> <i class="ph-fill ph-asterisk"></i>
+      <span>WRO SPECIAL INVITATIONAL</span> <i class="ph-fill ph-asterisk"></i>
+      <span>AFRICA 2027</span> <i class="ph-fill ph-asterisk"></i>
+      <span>BULAWAYO, ZIMBABWE</span> <i class="ph-fill ph-asterisk"></i>
+      <span>1–3 JULY 2027</span> <i class="ph-fill ph-asterisk"></i>
+      <span>35+ COUNTRIES</span> <i class="ph-fill ph-asterisk"></i>
+      <span>1,000+ PARTICIPANTS</span> <i class="ph-fill ph-asterisk"></i>
+      <span>WRO SPECIAL INVITATIONAL</span> <i class="ph-fill ph-asterisk"></i>
+      <span>AFRICA 2027</span> <i class="ph-fill ph-asterisk"></i>
+      <span>BULAWAYO, ZIMBABWE</span> <i class="ph-fill ph-asterisk"></i>
+      <span>1–3 JULY 2027</span> <i class="ph-fill ph-asterisk"></i>
+      <span>35+ COUNTRIES</span> <i class="ph-fill ph-asterisk"></i>
+      <span>1,000+ PARTICIPANTS</span> <i class="ph-fill ph-asterisk"></i>
     </div>
   </div>
 
-  <!-- Theme Graphic Presentation -->
-  <section class="section" id="theme">
+  <!-- About (brief) -->
+  <section class="section" id="about">
     <div class="container">
       <div class="split-layout">
         <div class="split-content fade-up">
-          <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Competition Theme</div>
-          <h2 style="font-size: 3.5rem;">Robotics Meets <br>Culture & Tech</h2>
-          <p>In 2027, the Robotics Open Africa comes to Bulawayo, Zimbabwe. Teams will explore how robots can help shape, protect, and grow art and culture in today’s world.</p>
-          <p>As an open competition preparing for the international finals in South Africa, students will tackle advanced engineering and programming challenges.</p>
-          <div style="margin-top: 2.5rem;">
+          <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> About the Competition</div>
+          <h2 style="font-size:3.5rem;">Africa's First WRO<br>Special Invitational</h2>
+          <p>The World Robot Olympiad is one of the world's premier robotics competitions — a network spanning <strong>85+ countries</strong> and engaging <strong>100,000+ students</strong> worldwide since 2014.</p>
+          <p>In 2027, Bulawayo, Zimbabwe becomes the proud host of Africa's first and largest WRO Special Invitational — an historic celebration of African talent in robotics, AI, and innovation for ages 8 to 22, implemented by <strong>Girls in STEM Trust Zimbabwe</strong>.</p>
+          <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
             <a href="#challenges" class="btn-pill">
               View Categories
               <div class="icon-badge"><i class="ph ph-arrow-right"></i></div>
             </a>
+            <a href="side-events.html" class="btn-pill">
+              Side Events
+              <div class="icon-badge"><i class="ph ph-calendar"></i></div>
+            </a>
           </div>
         </div>
         <div class="arch-image fade-up tilt-effect">
-          <img src="media/theme.png" alt="Robotics meeting culture">
+          <img src="media/theme.jpeg" alt="WRO Special Invitational Africa 2027">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Challenges Graphic Presentation (Bento) -->
-  <section class="section" id="challenges" style="background-color: var(--bg-card);">
+  <!-- Theme (brief) -->
+  <section class="section" id="theme" style="background-color:var(--bg-card);">
     <div class="container">
       <div class="section-header fade-up">
-        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> WRO Categories</div>
-        <h2>Official Competition Categories</h2>
-        <p>Prepare for the international stage with our official challenge categories.</p>
+        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> 2027 Theme</div>
+        <h2>The Future of Work</h2>
+        <p style="font-size:1.15rem; font-weight:700; color:var(--text-main);">Dream it. Design it. Build it with Robots.</p>
+        <p style="margin-top:0.75rem; max-width:600px; margin-left:auto; margin-right:auto;">The theme equips Africa's youth for a world shaped by AI, robotics, automation, and digital innovation — empowering them to envision, design, and build Africa's technological future.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competition Categories (Orbit) -->
+  <section class="section" id="challenges">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Competition</div>
+        <h2>3 Official Categories</h2>
+        <p>Click a category to open its mission briefing.</p>
       </div>
 
-      <div class="bento-grid">
-        <!-- RoboStarter -->
-        <div class="bento-card image-card fade-up tilt-effect">
-          <img src="media/robostarter.png" alt="RoboStarter">
-          <div class="card-content">
-            <h3 style="font-size: 2.2rem;">RoboStarter</h3>
-            <p style="font-size: 1.05rem;">A beginner-friendly category designed to introduce foundational robotics concepts and programming skills to new teams.</p>
+      <div class="categories-split fade-up">
+        <!-- LEFT: Orbit Circle -->
+        <div class="categories-orbit-panel">
+          <div class="categories-circle-section">
+            <div class="orbit-wrapper">
+              <div class="orbit-ring"></div>
+              <div class="orbit-ring"></div>
+              <div class="orbit-ring"></div>
+              <div class="orbit-center">
+                <div class="orbit-center-icon"><i class="ph-fill ph-robot"></i></div>
+                <div class="orbit-center-label">WRO<br>2027</div>
+              </div>
+              <div class="orbit-track" id="orbitTrack">
+                <div class="orbit-node" id="node-robostarter" tabindex="0"
+                  data-title="RoboStarter Innovators"
+                  data-desc="A beginner-friendly category introducing foundational robotics concepts, coding basics, and building skills to young teams for the first time."
+                  data-badge="Beginner" data-badge-color="#22c55e"
+                  data-tags="Ages 8-12,Beginner,Coding Basics,Building"
+                  data-img="media/robostarter.png">
+                  <img src="media/robostarter.png" alt="RoboStarter Innovators">
+                  <span class="orbit-node-label">RoboStarter</span>
+                </div>
+                <div class="orbit-node" id="node-innovators" tabindex="0"
+                  data-title="Future Innovators"
+                  data-desc="Develop a customized robotic solution to address real-world African challenges and present your innovative ideas to a panel of judges."
+                  data-badge="Intermediate" data-badge-color="#ff6b2c"
+                  data-tags="Ages 10-16,Problem Solving,Presentation,Innovation"
+                  data-img="media/mosaic.png">
+                  <img src="media/mosaic.png" alt="Future Innovators">
+                  <span class="orbit-node-label">Future Innovators</span>
+                </div>
+                <div class="orbit-node" id="node-engineers" tabindex="0"
+                  data-title="Future Engineers"
+                  data-desc="Advanced engineering challenges focused on autonomous systems and cutting-edge robotics at an international competition level."
+                  data-badge="Advanced" data-badge-color="#0056b3"
+                  data-tags="Ages 14-22,Autonomous,Engineering,WRO Global"
+                  data-img="media/art.png">
+                  <img src="media/art.png" alt="Future Engineers">
+                  <span class="orbit-node-label">Future Engineers</span>
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="orbit-hint"><i class="ph ph-cursor-click"></i> Click a node to brief</div>
         </div>
 
-        <!-- Future Innovators -->
-        <div class="bento-card image-card span-2 fade-up tilt-effect">
-          <img src="media/mosaic.png" alt="Future Innovators">
-          <div class="card-content">
-            <h3 style="font-size: 2.5rem;">Future Innovators</h3>
-            <p style="font-size: 1.1rem; max-width: 80%;">Develop a customized robotic solution to address real-world problems and present your innovative ideas to our panel of judges.</p>
-          </div>
-        </div>
-
-        <!-- Future Engineers -->
-        <div class="bento-card image-card span-3 fade-up tilt-effect" style="min-height: 450px;">
-          <img src="media/art.png" alt="Future Engineers">
-          <div class="card-content">
-            <h3 style="font-size: 2.5rem;">Future Engineers</h3>
-            <p style="font-size: 1.1rem; max-width: 60%;">Advanced engineering challenges focused on autonomous driving and complex vehicle control systems.</p>
+        <!-- RIGHT: Briefing Panel -->
+        <div class="categories-briefing-panel">
+          <div class="briefing-inner">
+            <div class="briefing-live"><span class="live-dot"></span> WRO Mission Control &mdash; 2027</div>
+            <div class="briefing-idle" id="briefingIdle">
+              <div class="briefing-idle-icon"><i class="ph-fill ph-robot"></i></div>
+              <h3>Select a Category</h3>
+              <p>Click any of the three orbiting nodes to access the full mission briefing, challenge overview, and age group details.</p>
+              <div class="orbit-dots">
+                <span class="orbit-dot" id="dot-0"></span>
+                <span class="orbit-dot" id="dot-1"></span>
+                <span class="orbit-dot" id="dot-2"></span>
+              </div>
+            </div>
+            <div class="briefing-detail" id="briefingDetail">
+              <img src="" alt="" class="briefing-category-img" id="briefingImg">
+              <span class="briefing-cat-badge" id="briefingBadge"></span>
+              <div class="briefing-cat-title" id="briefingTitle"></div>
+              <p class="briefing-cat-desc" id="briefingDesc"></p>
+              <div class="briefing-tags" id="briefingTags"></div>
+              <button class="briefing-back" id="briefingBack">
+                <i class="ph ph-arrow-left"></i> Back to overview
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Dials / Event Details -->
-  <section class="section" id="event-details">
+  <!-- Impact teaser (4 stat numbers only — no deep content) -->
+  <section class="section" id="impact" style="background-color:var(--bg-card);">
     <div class="container">
       <div class="section-header fade-up">
-        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Logistics</div>
-        <h2>Admission Details</h2>
-        <p>This is a closed event. All individuals must be registered to gain access to the venue.</p>
+        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Scale &amp; Impact</div>
+        <h2>Africa's Largest Robotics &amp; AI Showcase</h2>
       </div>
-
-      <div class="stats-grid fade-up">
-        <div>
-          <div class="stat-dial blue" data-value="100">
-            <svg viewBox="0 0 36 36" class="circular-chart">
-              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-              <path class="circle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-            </svg>
-            <div class="stat-content"><i class="ph ph-check"></i></div>
-          </div>
-          <h3 class="stat-label">Full Access</h3>
-          <p style="font-size: 0.95rem; margin-top: 0.5rem;">Opening & Closing Ceremonies</p>
+      <div class="impact-numbers fade-up">
+        <div class="impact-card">
+          <span class="impact-number">35<span class="impact-plus">+</span></span>
+          <span class="impact-label">African Countries</span>
+          <p>Under one roof, building Robotics &amp; AI solutions together</p>
         </div>
-        <div>
-          <div class="stat-dial orange" data-value="100">
-            <svg viewBox="0 0 36 36" class="circular-chart">
-              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-              <path class="circle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-            </svg>
-            <div class="stat-content"><i class="ph ph-fork-knife"></i></div>
-          </div>
-          <h3 class="stat-label">Dining Included</h3>
-          <p style="font-size: 0.95rem; margin-top: 0.5rem;">Lunch & Dinner on event days</p>
+        <div class="impact-card">
+          <span class="impact-number">1,000<span class="impact-plus">+</span></span>
+          <span class="impact-label">Participants</span>
+          <p>Learners, educators, startups, governments &amp; industry</p>
         </div>
-        <div>
-          <div class="stat-dial blue" data-value="100">
-            <svg viewBox="0 0 36 36" class="circular-chart">
-              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-              <path class="circle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-            </svg>
-            <div class="stat-content"><i class="ph ph-tote"></i></div>
-          </div>
-          <h3 class="stat-label">Welcome Bag</h3>
-          <p style="font-size: 0.95rem; margin-top: 0.5rem;">Event book and branded items</p>
+        <div class="impact-card">
+          <span class="impact-number">100<span class="impact-plus">+</span></span>
+          <span class="impact-label">Teams</span>
+          <p>Schools, tertiary institutions, robotics clubs &amp; STEM organisations</p>
         </div>
+        <div class="impact-card">
+          <span class="impact-number">4</span>
+          <span class="impact-label">Side Events</span>
+          <p>Running parallel — open for partnership &amp; sponsorship</p>
+        </div>
+      </div>
+      <!-- Teaser CTAs to sub-pages -->
+      <div style="display:flex; justify-content:center; gap:1.5rem; margin-top:3rem; flex-wrap:wrap;" class="fade-up">
+        <a href="side-events.html" class="btn-pill">
+          Explore Side Events
+          <div class="icon-badge"><i class="ph ph-arrow-right"></i></div>
+        </a>
+        <a href="sponsorship.html" class="btn-pill">
+          View Sponsorship Packages
+          <div class="icon-badge"><i class="ph ph-handshake"></i></div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Host Authentic Graphic Presentation -->
-  <section class="section" id="host">
+  <!-- Host City -->
+  <section class="section" id="host" style="padding-bottom:2rem;">
     <div class="container">
-      <div class="section-header fade-up">
+      <div class="section-header fade-up" style="margin-bottom:0;">
         <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Host City</div>
         <h2>Beautiful Bulawayo</h2>
       </div>
       <div class="host-banner fade-up">
-        <!-- Using authentic image downloaded via Wikipedia -->
-        <img src="media/bulawayo_authentic.jpg" alt="Bulawayo City CBD">
+        <img src="media/bulawayo.jpg" alt="Bulawayo City CBD">
         <div class="host-banner-content">
-          <h3 style="margin-bottom: 1rem; font-size: 2rem; color: var(--primary-accent);">The City of Kings</h3>
-          <p style="font-size: 1.1rem; line-height: 1.8;">Zimbabwe is a vibrant nation at the crossroads of cultures. Bulawayo offers a unique combination of modern facilities, historic sites, and warm hospitality, making it an ideal home for the WRO community.</p>
+          <h3 style="margin-bottom:1rem; font-size:2.5rem; color:var(--primary-accent);">The City of Kings</h3>
+          <p style="font-size:1.15rem; line-height:1.8;">Zimbabwe's second-largest city, Bulawayo offers a unique combination of modern facilities, historic sites, and warm hospitality — the perfect home for Africa's largest robotics celebration.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Slider (Hotels & Tours) -->
-  <section class="section" id="hotels" style="background-color: var(--bg-card); overflow: hidden;">
+  <!-- Hotels slider -->
+  <section class="section" id="hotels" style="background-color:var(--bg-card); overflow:hidden;">
     <div class="container">
       <div class="section-header fade-up">
         <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Accommodation</div>
-        <h2>Hotels & Tourism</h2>
-        <p>Swipe or drag to explore our partner hotels and recommended tourist activities in Bulawayo.</p>
+        <h2>Hotels &amp; Tourism</h2>
+        <p>Swipe or drag to explore recommended hotels and tourist activities in Bulawayo.</p>
       </div>
-
       <div class="slider-container fade-up" id="slider">
         <div class="slide-card">
-          <h3 style="margin-bottom: 1rem; color: var(--text-main); font-size: 1.5rem;"><i class="ph ph-buildings" style="color: var(--primary-accent);"></i> Holiday Inn Bulawayo</h3>
-          <p>10 minutes to event location. Premium service with high-speed internet.</p>
-          <ul style="list-style: none; margin-top: 1.5rem; line-height: 2;">
-            <li><i class="ph ph-check" style="color: var(--primary-accent);"></i> Breakfast Included</li>
-            <li><i class="ph ph-check" style="color: var(--primary-accent);"></i> Pool Access</li>
+          <h3 style="margin-bottom:1rem; color:var(--text-main); font-size:1.5rem;"><i class="ph ph-buildings" style="color:var(--primary-accent);"></i> Holiday Inn Bulawayo</h3>
+          <p>10 minutes to Bulawayo Exhibition Centre. Premium service with high-speed internet.</p>
+          <ul style="list-style:none; margin-top:1.5rem; line-height:2;">
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Breakfast Included</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Pool Access</li>
           </ul>
         </div>
         <div class="slide-card">
-          <h3 style="margin-bottom: 1rem; color: var(--text-main); font-size: 1.5rem;"><i class="ph ph-buildings" style="color: var(--primary-accent);"></i> Cresta Churchill</h3>
-          <p>15 minutes to event location. Quiet, elegant, and perfectly situated.</p>
-          <ul style="list-style: none; margin-top: 1.5rem; line-height: 2;">
-            <li><i class="ph ph-check" style="color: var(--primary-accent);"></i> Breakfast Included</li>
-            <li><i class="ph ph-check" style="color: var(--primary-accent);"></i> Pool Access</li>
+          <h3 style="margin-bottom:1rem; color:var(--text-main); font-size:1.5rem;"><i class="ph ph-buildings" style="color:var(--primary-accent);"></i> Cresta Churchill</h3>
+          <p>15 minutes to venue. Quiet, elegant, and perfectly situated in the city.</p>
+          <ul style="list-style:none; margin-top:1.5rem; line-height:2;">
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Breakfast Included</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Pool Access</li>
           </ul>
         </div>
         <div class="slide-card">
-          <h3 style="margin-bottom: 1rem; color: var(--text-main); font-size: 1.5rem;"><i class="ph ph-buildings" style="color: var(--primary-accent);"></i> The Bulawayo Club</h3>
-          <p>5 minutes to event location. Historic charm and luxury in the city center.</p>
-          <ul style="list-style: none; margin-top: 1.5rem; line-height: 2;">
-            <li><i class="ph ph-x" style="color: #ef4444;"></i> Breakfast Not Included</li>
-            <li><i class="ph ph-x" style="color: #ef4444;"></i> No Pool Access</li>
+          <h3 style="margin-bottom:1rem; color:var(--text-main); font-size:1.5rem;"><i class="ph ph-buildings" style="color:var(--primary-accent);"></i> The Bulawayo Club</h3>
+          <p>5 minutes to venue. Historic charm and luxury in the city centre.</p>
+          <ul style="list-style:none; margin-top:1.5rem; line-height:2;">
+            <li><i class="ph ph-x" style="color:#ef4444;"></i> Breakfast Not Included</li>
+            <li><i class="ph ph-x" style="color:#ef4444;"></i> No Pool Access</li>
           </ul>
         </div>
         <div class="slide-card">
-          <h3 style="margin-bottom: 1rem; color: var(--text-main); font-size: 1.5rem;"><i class="ph ph-mountains" style="color: var(--secondary-accent);"></i> Matobo National Park</h3>
-          <p>Spectacular granite kopjes and rhinos. A must-visit tourist activity.</p>
-          <a href="#" class="btn-secondary" style="margin-top: 1.5rem; display: block; text-align: center;">Book Tour</a>
+          <h3 style="margin-bottom:1rem; color:var(--text-main); font-size:1.5rem;"><i class="ph ph-mountains" style="color:var(--secondary-accent);"></i> Matobo National Park</h3>
+          <p>Spectacular granite kopjes, rhinos and ancient San rock art. A must-visit.</p>
+          <a href="#" class="btn-secondary" style="margin-top:1.5rem; display:block; text-align:center;">Book Tour</a>
         </div>
       </div>
     </div>
@@ -247,34 +324,35 @@
 
   <!-- Footer -->
   <footer class="footer" id="contact">
-    <div class="container" style="text-align: center; max-width: 800px;">
-      <h2 style="margin-bottom: 1rem;">Need More Information?</h2>
-      <div style="display: flex; justify-content: center; gap: 4rem; margin: 3rem 0; flex-wrap: wrap;">
+    <div class="container" style="text-align:center; max-width:800px;">
+      <h2 style="margin-bottom:1rem;">Get in Touch</h2>
+      <div style="display:flex; justify-content:center; gap:4rem; margin:3rem 0; flex-wrap:wrap;">
         <div>
-          <h3 style="color: var(--primary-accent); margin-bottom: 0.5rem; font-size: 1.1rem;">Email</h3>
-          <p style="font-weight: 500;">info@wrozimbabwe.org</p>
+          <h3 style="color:var(--primary-accent); margin-bottom:0.5rem; font-size:1.1rem;">Email</h3>
+          <p style="font-weight:500;">wro-zimbabwe@girlsinstemtrust.org</p>
         </div>
         <div>
-          <h3 style="color: var(--primary-accent); margin-bottom: 0.5rem; font-size: 1.1rem;">Call</h3>
-          <p style="font-weight: 500;">+263 123 456 789</p>
+          <h3 style="color:var(--primary-accent); margin-bottom:0.5rem; font-size:1.1rem;">Call</h3>
+          <p style="font-weight:500;">+263 719 033 438</p>
         </div>
         <div>
-          <h3 style="color: var(--primary-accent); margin-bottom: 0.5rem; font-size: 1.1rem;">Location</h3>
-          <p style="font-weight: 500;">Bulawayo Exhibition Centre</p>
+          <h3 style="color:var(--primary-accent); margin-bottom:0.5rem; font-size:1.1rem;">Venue</h3>
+          <p style="font-weight:500;">Bulawayo Exhibition Centre</p>
         </div>
       </div>
-      <div class="social-links" style="justify-content: center; margin-bottom: 2rem;">
+      <div class="social-links" style="justify-content:center; margin-bottom:2rem;">
         <a href="#"><i class="ph ph-facebook-logo"></i></a>
         <a href="#"><i class="ph ph-instagram-logo"></i></a>
         <a href="#"><i class="ph ph-linkedin-logo"></i></a>
       </div>
-      <div style="border-top: 1px solid var(--border-light); padding-top: 2rem; font-size: 0.9rem; color: var(--text-muted);">
-        <p>This Robotics Open Africa is hosted by WRO Zimbabwe.</p>
-        <img src="media/logo-dark.png" alt="WRO Zimbabwe" style="height: 30px; margin-top: 1.5rem; opacity: 0.7;">
+      <div style="border-top:1px solid var(--border-light); padding-top:2rem; font-size:0.9rem; color:var(--text-muted);">
+        <p>WRO Special Invitational Africa 2027 is implemented by Girls in STEM Trust Zimbabwe.</p>
+        <img src="media/logo.png" alt="WRO Zimbabwe" style="height:36px; margin-top:1.5rem; opacity:0.85;">
       </div>
     </div>
   </footer>
 
   <script src="main.js"></script>
 </body>
+
 </html>
