@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WRO Special Invitational Africa 2027 – Bulawayo, Zimbabwe</title>
-  <meta name="description" content="Africa's first and largest WRO Special Invitational – 1–3 July 2027, Bulawayo Exhibition Centre, Zimbabwe. 35+ countries, 1,000+ participants, 3 competition categories.">
+  <meta name="description" content="Africa's first and largest WRO Special Invitational – 30 June–3 July 2027, ZITF Bulawayo, Zimbabwe. 3 competition categories, 4 side events, cultural excursion.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="src/css/styles.css">
 </head>
 
 <body>
@@ -22,28 +23,43 @@
   <header class="navbar">
     <div class="nav-container">
       <div class="logo">
-        <a href="index.html"><img src="media/logo.png" alt="WRO Zimbabwe 2027"></a>
+        <a href="index.html"><img src="media/logo.png" alt="WRO Zimbabwe 2027" class="nav-logo"></a>
       </div>
-      <nav class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="#about">About</a>
-        <a href="#theme">Theme</a>
         <a href="#challenges">Categories</a>
-        <a href="side-events.html">Side Events</a>
-        <a href="sponsorship.html">Sponsorship</a>
-        <a href="#host">Host City</a>
+        <div class="nav-dropdown">
+          <a href="src/pages/side-events.html" class="nav-drop-toggle">Events<i class="ph ph-caret-down"></i></a>
+          <div class="nav-drop-menu">
+            <a href="src/pages/side-events.html">All Side Events</a>
+            <a href="src/pages/events/ai-forum.html">Africa AI Strategy Forum</a>
+            <a href="src/pages/events/educators-summit.html">AI &amp; Robotics Summit for Educators</a>
+            <a href="src/pages/events/startup-meetup.html">African Tech Start-Ups Meet-Up</a>
+            <a href="src/pages/events/robotics-exhibition.html">Robotics Merchandise Exhibition</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="src/pages/accommodation.html" class="nav-drop-toggle">Visit BYO<i class="ph ph-caret-down"></i></a>
+          <div class="nav-drop-menu">
+            <a href="src/pages/accommodation.html">Accommodation &amp; Map</a>
+            <a href="src/pages/excursion.html">Matobo Hills Excursion</a>
+          </div>
+        </div>
+        <a href="src/pages/merch.html">Merch</a>
       </nav>
       <div class="nav-actions">
-        <a href="sponsorship.html" class="btn-pill btn-pill--nav">
-          Partner With Us
+        <a href="https://forms.gle/o5ZpRrhMntWDM8jc8" target="_blank" rel="noopener" class="btn-pill btn-pill--nav">
+          Register Now
           <div class="icon-badge"><i class="ph ph-arrow-up-right"></i></div>
         </a>
       </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero" id="home">
-    <video class="hero-video" autoplay loop muted playsinline>
+    <video class="hero-video" autoplay loop muted playsinline poster="media/theme.jpeg">
       <source src="media/hero-video.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
@@ -53,7 +69,7 @@
         <i class="ph-fill ph-asterisk"></i> Africa's First &amp; Largest WRO Invitational
       </div>
       <h1 class="hero-title">WRO Special Invitational <span class="text-gradient">Africa 2027</span></h1>
-      <p class="hero-subtitle">Bulawayo, Zimbabwe &nbsp;·&nbsp; 1–3 July 2027 &nbsp;·&nbsp; 35+ African countries &nbsp;·&nbsp; 1,000+ participants</p>
+      <p class="hero-subtitle">ZITF Bulawayo, Zimbabwe &nbsp;·&nbsp; 30 June – 3 July 2027 &nbsp;·&nbsp; 3 competition categories</p>
 
       <div class="countdown" id="countdown">
         <div class="countdown-item"><span class="countdown-value" id="days">00</span><span class="countdown-label">Days</span></div>
@@ -70,9 +86,9 @@
           Discover the Event
           <div class="icon-badge"><i class="ph ph-arrow-down-right"></i></div>
         </a>
-        <a href="sponsorship.html" class="btn-pill btn-pill--hero">
-          Partner With Us
-          <div class="icon-badge"><i class="ph ph-handshake"></i></div>
+        <a href="https://forms.gle/o5ZpRrhMntWDM8jc8" target="_blank" rel="noopener" class="btn-pill btn-pill--hero">
+          Register Your Team
+          <div class="icon-badge"><i class="ph ph-arrow-up-right"></i></div>
         </a>
       </div>
     </div>
@@ -84,15 +100,15 @@
       <span>WRO SPECIAL INVITATIONAL</span> <i class="ph-fill ph-asterisk"></i>
       <span>AFRICA 2027</span> <i class="ph-fill ph-asterisk"></i>
       <span>BULAWAYO, ZIMBABWE</span> <i class="ph-fill ph-asterisk"></i>
-      <span>1–3 JULY 2027</span> <i class="ph-fill ph-asterisk"></i>
-      <span>35+ COUNTRIES</span> <i class="ph-fill ph-asterisk"></i>
-      <span>1,000+ PARTICIPANTS</span> <i class="ph-fill ph-asterisk"></i>
+      <span>30 JUNE – 3 JULY 2027</span> <i class="ph-fill ph-asterisk"></i>
+      <span>ZITF EXHIBITION CENTRE</span> <i class="ph-fill ph-asterisk"></i>
+      <span>3 CATEGORIES · 4 SIDE EVENTS</span> <i class="ph-fill ph-asterisk"></i>
       <span>WRO SPECIAL INVITATIONAL</span> <i class="ph-fill ph-asterisk"></i>
       <span>AFRICA 2027</span> <i class="ph-fill ph-asterisk"></i>
       <span>BULAWAYO, ZIMBABWE</span> <i class="ph-fill ph-asterisk"></i>
-      <span>1–3 JULY 2027</span> <i class="ph-fill ph-asterisk"></i>
-      <span>35+ COUNTRIES</span> <i class="ph-fill ph-asterisk"></i>
-      <span>1,000+ PARTICIPANTS</span> <i class="ph-fill ph-asterisk"></i>
+      <span>30 JUNE – 3 JULY 2027</span> <i class="ph-fill ph-asterisk"></i>
+      <span>ZITF EXHIBITION CENTRE</span> <i class="ph-fill ph-asterisk"></i>
+      <span>3 CATEGORIES · 4 SIDE EVENTS</span> <i class="ph-fill ph-asterisk"></i>
     </div>
   </div>
 
@@ -103,14 +119,14 @@
         <div class="split-content fade-up">
           <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> About the Competition</div>
           <h2 style="font-size:3.5rem;">Africa's First WRO<br>Special Invitational</h2>
-          <p>The World Robot Olympiad is one of the world's premier robotics competitions — a network spanning <strong>85+ countries</strong> and engaging <strong>100,000+ students</strong> worldwide since 2014.</p>
-          <p>In 2027, Bulawayo, Zimbabwe becomes the proud host of Africa's first and largest WRO Special Invitational — an historic celebration of African talent in robotics, AI, and innovation for ages 8 to 22, implemented by <strong>Girls in STEM Trust Zimbabwe</strong>.</p>
+          <p>The World Robot Olympiad is a global robotics competition where young people design, build and programme robots to solve real-world challenges — a network spanning <strong>85+ countries</strong> and engaging <strong>100,000+ students</strong> worldwide since 2014.</p>
+          <p>In 2027, Bulawayo, Zimbabwe becomes the proud host of Africa's first and largest WRO Special Invitational — a dynamic showcase of youth-driven robotics and AI innovation, accelerating digital growth and unlocking young talent, implemented by <strong>Girls in STEM Trust Zimbabwe</strong>.</p>
           <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
             <a href="#challenges" class="btn-pill">
               View Categories
               <div class="icon-badge"><i class="ph ph-arrow-right"></i></div>
             </a>
-            <a href="side-events.html" class="btn-pill">
+            <a href="src/pages/side-events.html" class="btn-pill">
               Side Events
               <div class="icon-badge"><i class="ph ph-calendar"></i></div>
             </a>
@@ -119,18 +135,6 @@
         <div class="arch-image fade-up tilt-effect">
           <img src="media/theme.jpeg" alt="WRO Special Invitational Africa 2027">
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Theme (brief) -->
-  <section class="section" id="theme" style="background-color:var(--bg-card);">
-    <div class="container">
-      <div class="section-header fade-up">
-        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> 2027 Theme</div>
-        <h2>The Future of Work</h2>
-        <p style="font-size:1.15rem; font-weight:700; color:var(--text-main);">Dream it. Design it. Build it with Robots.</p>
-        <p style="margin-top:0.75rem; max-width:600px; margin-left:auto; margin-right:auto;">The theme equips Africa's youth for a world shaped by AI, robotics, automation, and digital innovation — empowering them to envision, design, and build Africa's technological future.</p>
       </div>
     </div>
   </section>
@@ -159,27 +163,27 @@
               <div class="orbit-track" id="orbitTrack">
                 <div class="orbit-node" id="node-robostarter" tabindex="0"
                   data-title="RoboStarter Innovators"
-                  data-desc="A beginner-friendly category introducing foundational robotics concepts, coding basics, and building skills to young teams for the first time."
+                  data-desc="A beginner-friendly category for those with little to no robotics experience, introducing foundational robotics concepts, coding basics, and building skills. Challenge guidelines shared with participants."
                   data-badge="Beginner" data-badge-color="#22c55e"
-                  data-tags="Ages 8-12,Beginner,Coding Basics,Building"
+                  data-tags="Elementary 8–12,Junior 13–15,Senior 16–18"
                   data-img="media/robostarter.png">
                   <img src="media/robostarter.png" alt="RoboStarter Innovators">
                   <span class="orbit-node-label">RoboStarter</span>
                 </div>
                 <div class="orbit-node" id="node-innovators" tabindex="0"
                   data-title="Future Innovators"
-                  data-desc="Develop a customized robotic solution to address real-world African challenges and present your innovative ideas to a panel of judges."
+                  data-desc="A project-based category. Teams study a real-world problem, come up with a robotics-based idea, and build a working prototype to present to judges."
                   data-badge="Intermediate" data-badge-color="#ff6b2c"
-                  data-tags="Ages 10-16,Problem Solving,Presentation,Innovation"
+                  data-tags="Elementary 8–12,Junior 13–15,Senior 14–19"
                   data-img="media/mosaic.png">
                   <img src="media/mosaic.png" alt="Future Innovators">
                   <span class="orbit-node-label">Future Innovators</span>
                 </div>
                 <div class="orbit-node" id="node-engineers" tabindex="0"
                   data-title="Future Engineers"
-                  data-desc="Advanced engineering challenges focused on autonomous systems and cutting-edge robotics at an international competition level."
+                  data-desc="An advanced technology challenge. Teams build and programme an autonomous robotic vehicle with free choice of hardware and programming language."
                   data-badge="Advanced" data-badge-color="#0056b3"
-                  data-tags="Ages 14-22,Autonomous,Engineering,WRO Global"
+                  data-tags="Junior 14–18,Senior 19–22"
                   data-img="media/art.png">
                   <img src="media/art.png" alt="Future Engineers">
                   <span class="orbit-node-label">Future Engineers</span>
@@ -197,7 +201,7 @@
             <div class="briefing-idle" id="briefingIdle">
               <div class="briefing-idle-icon"><i class="ph-fill ph-robot"></i></div>
               <h3>Select a Category</h3>
-              <p>Click any of the three orbiting nodes to access the full mission briefing, challenge overview, and age group details.</p>
+              <p>Click any of the three orbiting nodes to access the full mission briefing, age group bands, and category details.</p>
               <div class="orbit-dots">
                 <span class="orbit-dot" id="dot-0"></span>
                 <span class="orbit-dot" id="dot-1"></span>
@@ -220,7 +224,160 @@
     </div>
   </section>
 
-  <!-- Impact teaser (4 stat numbers only — no deep content) -->
+  <!-- Competition Sub-themes -->
+  <section class="section" id="subthemes" style="background-color:var(--bg-card);">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Sub-themes</div>
+        <h2>Whatever Your Sector, Your Mission is on the Floor</h2>
+        <p>Teams choose a sub-theme and build a robotics or AI solution for it.</p>
+      </div>
+      <div class="subthemes-grid fade-up">
+        <div class="subtheme-card">
+          <div class="subtheme-icon"><i class="ph-fill ph-plant"></i></div>
+          <h3>Agritech</h3>
+          <p>Food security and the future of farming.</p>
+        </div>
+        <div class="subtheme-card">
+          <div class="subtheme-icon"><i class="ph-fill ph-coins"></i></div>
+          <h3>Fintech</h3>
+          <p>Financial inclusion and digital finance.</p>
+        </div>
+        <div class="subtheme-card">
+          <div class="subtheme-icon"><i class="ph-fill ph-heartbeat"></i></div>
+          <h3>HealthTech</h3>
+          <p>Better healthcare solutions for Africa.</p>
+        </div>
+        <div class="subtheme-card">
+          <div class="subtheme-icon"><i class="ph-fill ph-buildings"></i></div>
+          <h3>Smart Cities &amp; Communities</h3>
+          <p>Connected, sustainable places to live and work.</p>
+        </div>
+        <div class="subtheme-card">
+          <div class="subtheme-icon"><i class="ph-fill ph-brain"></i></div>
+          <h3>AI &amp; Emerging Technologies</h3>
+          <p>Intelligent solutions for Africa's challenges.</p>
+        </div>
+        <div class="subtheme-card">
+          <div class="subtheme-icon"><i class="ph-fill ph-leaf"></i></div>
+          <h3>Green Tech &amp; Renewable Energy</h3>
+          <p>Climate action and clean energy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Photo Gallery -->
+  <section class="section" id="gallery" style="background-color:var(--bg-card);">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Gallery</div>
+        <h2>WRO Africa in Action</h2>
+        <p>Moments from past competitions and events across Africa.</p>
+      </div>
+      <div class="gallery-marquee fade-up" aria-label="Photo gallery">
+        <div class="gallery-track">
+          <div class="gallery-item g-lg"><img src="media/Gallery/1784124515747.jpeg" alt="WRO event" loading="lazy"></div>
+          <div class="gallery-item g-md"><img src="media/Gallery/1729097328112.jpeg" alt="WRO event" loading="lazy"></div>
+          <div class="gallery-item g-sm"><img src="media/Gallery/1732711247206.jpeg" alt="WRO event" loading="lazy"></div>
+          <div class="gallery-item g-md"><img src="media/Gallery/1764219146880.jpeg" alt="WRO event" loading="lazy"></div>
+          <div class="gallery-item g-sm"><img src="media/Gallery/1737642570492.jpeg" alt="WRO event" loading="lazy"></div>
+          <div class="gallery-item g-md"><img src="media/Gallery/1737642573142.jpeg" alt="WRO event" loading="lazy"></div>
+          <div class="gallery-item g-lg"><img src="media/Gallery/1739553665040.jpeg" alt="WRO event" loading="lazy"></div>
+          <div class="gallery-item g-sm"><img src="media/Gallery/1780021600257.jpeg" alt="WRO event" loading="lazy"></div>
+          <div class="gallery-item g-md"><img src="media/Gallery/1775678427392.jpeg" alt="WRO event" loading="lazy"></div>
+          <div class="gallery-item g-lg"><img src="media/Gallery/1775678427503.jpeg" alt="WRO event" loading="lazy"></div>
+          <div class="gallery-item g-sm"><img src="media/Gallery/1784124496538.jpeg" alt="WRO event" loading="lazy"></div>
+          <div class="gallery-item g-md"><img src="media/Gallery/1782896825975.jpeg" alt="WRO event" loading="lazy"></div>
+          <div class="gallery-item g-lg" aria-hidden="true"><img src="media/Gallery/1784124515747.jpeg" alt="" loading="lazy"></div>
+          <div class="gallery-item g-md" aria-hidden="true"><img src="media/Gallery/1729097328112.jpeg" alt="" loading="lazy"></div>
+          <div class="gallery-item g-sm" aria-hidden="true"><img src="media/Gallery/1732711247206.jpeg" alt="" loading="lazy"></div>
+          <div class="gallery-item g-md" aria-hidden="true"><img src="media/Gallery/1764219146880.jpeg" alt="" loading="lazy"></div>
+          <div class="gallery-item g-sm" aria-hidden="true"><img src="media/Gallery/1737642570492.jpeg" alt="" loading="lazy"></div>
+          <div class="gallery-item g-md" aria-hidden="true"><img src="media/Gallery/1737642573142.jpeg" alt="" loading="lazy"></div>
+          <div class="gallery-item g-lg" aria-hidden="true"><img src="media/Gallery/1739553665040.jpeg" alt="" loading="lazy"></div>
+          <div class="gallery-item g-sm" aria-hidden="true"><img src="media/Gallery/1780021600257.jpeg" alt="" loading="lazy"></div>
+          <div class="gallery-item g-md" aria-hidden="true"><img src="media/Gallery/1775678427392.jpeg" alt="" loading="lazy"></div>
+          <div class="gallery-item g-lg" aria-hidden="true"><img src="media/Gallery/1775678427503.jpeg" alt="" loading="lazy"></div>
+          <div class="gallery-item g-sm" aria-hidden="true"><img src="media/Gallery/1784124496538.jpeg" alt="" loading="lazy"></div>
+          <div class="gallery-item g-md" aria-hidden="true"><img src="media/Gallery/1782896825975.jpeg" alt="" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Event Programme -->
+  <section class="section" id="programme">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Programme</div>
+        <h2>Event Programme</h2>
+        <p>Official programme, per the participant booklet. Open to the public on Wednesday &amp; Friday — Thursday is a judging day. <a href="src/pages/side-events.html" style="color:var(--primary-accent); font-weight:700;">Side event details <i class="ph ph-arrow-right"></i></a></p>
+      </div>
+      <div class="programme-grid fade-up">
+
+        <div class="programme-day">
+          <span class="prog-eyebrow">Arrival &amp; Set-up</span>
+          <h3>Tuesday 29 June</h3>
+          <p class="prog-note">No meals served this day. Venue closes 17:00.</p>
+          <ul class="prog-list">
+            <li class="prog-item"><span class="prog-time">10:00</span><span>Venue opens and registration</span></li>
+            <li class="prog-item"><span class="prog-time">11:00</span><span>Team registration, merchandise collection &amp; booth set-up</span></li>
+          </ul>
+        </div>
+
+        <div class="programme-day">
+          <span class="prog-eyebrow">Side Events &amp; Opening</span>
+          <h3>Wednesday 30 June</h3>
+          <ul class="prog-list">
+            <li class="prog-item"><span class="prog-time">08:00–09:30</span><span>Final set-up</span></li>
+            <li class="prog-item"><span class="prog-time">09:30–13:00</span><span>Robotics Merchandise Exhibition <span class="prog-badge">Side event</span></span></li>
+            <li class="prog-item"><span class="prog-time">13:00–14:00</span><span>Lunch</span></li>
+            <li class="prog-item"><span class="prog-time">14:00–16:30</span><span>AI &amp; Robotics Summit for Educators <span class="prog-badge">Side event</span></span></li>
+            <li class="prog-item"><span class="prog-time">17:30–18:45</span><span>Opening ceremony</span></li>
+            <li class="prog-item"><span class="prog-time">19:00–20:00</span><span>Dinner service</span></li>
+          </ul>
+        </div>
+
+        <div class="programme-day">
+          <span class="prog-eyebrow">Judging Day</span>
+          <h3>Thursday 1 July</h3>
+          <p class="prog-note">Closed to visitors — judging all day.</p>
+          <ul class="prog-list">
+            <li class="prog-item"><span class="prog-time">08:30–12:45</span><span>African Tech Start-Ups Meet-Up <span class="prog-badge">Side event</span></span></li>
+            <li class="prog-item"><span class="prog-time">08:30–13:15</span><span>Judging rounds 1 &amp; 2</span></li>
+            <li class="prog-item"><span class="prog-time">14:00–17:00</span><span>Judging round 3, exhibitions &amp; networking</span></li>
+            <li class="prog-item"><span class="prog-time">17:00–18:00</span><span>Packed supper · venue closes 19:00</span></li>
+          </ul>
+        </div>
+
+        <div class="programme-day prog-day--award">
+          <span class="prog-eyebrow">Awards Day</span>
+          <h3>Friday 2 July</h3>
+          <ul class="prog-list">
+            <li class="prog-item"><span class="prog-time">08:00–11:30</span><span>Africa AI Strategy Forum (breakfast meeting) <span class="prog-badge">Side event</span></span></li>
+            <li class="prog-item"><span class="prog-time">10:00–16:30</span><span>Final judging prep, exhibitions &amp; networking</span></li>
+            <li class="prog-item"><span class="prog-time">18:00–19:30</span><span>Awards Ceremony 🏆</span></li>
+            <li class="prog-item"><span class="prog-time">20:00–22:30</span><span>Group photos &amp; Networking Dinner</span></li>
+          </ul>
+        </div>
+
+        <div class="programme-day">
+          <span class="prog-eyebrow">Excursion Day</span>
+          <h3>Saturday 3 July</h3>
+          <ul class="prog-list">
+            <li class="prog-item"><span class="prog-time">10:00</span><span>Coaches depart ZITF for the cultural excursion — Matobo Hills <span class="prog-badge">Cultural exchange</span></span></li>
+            <li class="prog-item"><span class="prog-time">11:00–15:00</span><span>Cultural exchange with lunch served on site</span></li>
+            <li class="prog-item"><span class="prog-time">15:00</span><span>Return from the excursion</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Scale & Impact teaser -->
   <section class="section" id="impact" style="background-color:var(--bg-card);">
     <div class="container">
       <div class="section-header fade-up">
@@ -229,7 +386,7 @@
       </div>
       <div class="impact-numbers fade-up">
         <div class="impact-card">
-          <span class="impact-number">35<span class="impact-plus">+</span></span>
+          <span class="impact-number">30<span class="impact-plus">+</span></span>
           <span class="impact-label">African Countries</span>
           <p>Under one roof, building Robotics &amp; AI solutions together</p>
         </div>
@@ -246,18 +403,17 @@
         <div class="impact-card">
           <span class="impact-number">4</span>
           <span class="impact-label">Side Events</span>
-          <p>Running parallel — open for partnership &amp; sponsorship</p>
+          <p>Running parallel during the event days — optional add-on at registration</p>
         </div>
       </div>
-      <!-- Teaser CTAs to sub-pages -->
       <div style="display:flex; justify-content:center; gap:1.5rem; margin-top:3rem; flex-wrap:wrap;" class="fade-up">
-        <a href="side-events.html" class="btn-pill">
+        <a href="src/pages/side-events.html" class="btn-pill">
           Explore Side Events
           <div class="icon-badge"><i class="ph ph-arrow-right"></i></div>
         </a>
-        <a href="sponsorship.html" class="btn-pill">
-          View Sponsorship Packages
-          <div class="icon-badge"><i class="ph ph-handshake"></i></div>
+        <a href="https://forms.gle/o5ZpRrhMntWDM8jc8" target="_blank" rel="noopener" class="btn-pill">
+          Register Your Team
+          <div class="icon-badge"><i class="ph ph-arrow-up-right"></i></div>
         </a>
       </div>
     </div>
@@ -286,12 +442,12 @@
       <div class="section-header fade-up">
         <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Accommodation</div>
         <h2>Hotels &amp; Tourism</h2>
-        <p>Swipe or drag to explore recommended hotels and tourist activities in Bulawayo.</p>
+        <p>Swipe or drag to explore recommended hotels and tourist activities in Bulawayo. <a href="src/pages/accommodation.html" style="color:var(--primary-accent); font-weight:700;">Full accommodation guide <i class="ph ph-arrow-right"></i></a></p>
       </div>
       <div class="slider-container fade-up" id="slider">
         <div class="slide-card">
           <h3 style="margin-bottom:1rem; color:var(--text-main); font-size:1.5rem;"><i class="ph ph-buildings" style="color:var(--primary-accent);"></i> Holiday Inn Bulawayo</h3>
-          <p>10 minutes to Bulawayo Exhibition Centre. Premium service with high-speed internet.</p>
+          <p>10 minutes to the exhibition centre. Premium service with high-speed internet.</p>
           <ul style="list-style:none; margin-top:1.5rem; line-height:2;">
             <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Breakfast Included</li>
             <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Pool Access</li>
@@ -316,7 +472,88 @@
         <div class="slide-card">
           <h3 style="margin-bottom:1rem; color:var(--text-main); font-size:1.5rem;"><i class="ph ph-mountains" style="color:var(--secondary-accent);"></i> Matobo National Park</h3>
           <p>Spectacular granite kopjes, rhinos and ancient San rock art. A must-visit.</p>
-          <a href="#" class="btn-secondary" style="margin-top:1.5rem; display:block; text-align:center;">Book Tour</a>
+          <a href="src/pages/excursion.html" class="btn-secondary" style="margin-top:1.5rem; display:block; text-align:center;">See the Official Excursion</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration -->
+  <section class="section" id="register" style="background:linear-gradient(135deg,#1c172b,#0f172a);">
+    <div class="container">
+      <div class="qr-register-layout fade-up">
+        <div class="qr-text">
+          <div class="sparkle-badge" style="color:rgba(255,255,255,0.7);"><i class="ph-fill ph-asterisk"></i> Register Now</div>
+          <h2 style="color:#fff; font-size:3rem;">Secure Your Spot</h2>
+          <p style="color:rgba(255,255,255,0.65); font-size:1.1rem; line-height:1.8;">Complete the Expression of Interest &amp; Early-Bird Registration form. Open for schools, learners, educators and robotics teams from across Africa.</p>
+
+          <div class="fee-rows" style="margin-top:2rem;">
+            <div class="fee-row fee-row--highlight">
+              <div>
+                <h4 style="color:#fff;">Early Bird Registration</h4>
+                <span style="font-size:0.8rem; color:rgba(255,255,255,0.5);">Closes 13 December 2026 · save US$80</span>
+              </div>
+              <div class="fee-price">US$350<span>/participant</span></div>
+            </div>
+            <div class="fee-row">
+              <div>
+                <h4 style="color:#fff;">Normal Registration</h4>
+                <span style="font-size:0.8rem; color:rgba(255,255,255,0.5);">Closes 30 April 2027</span>
+              </div>
+              <div class="fee-price fee-price--muted">US$430<span>/participant</span></div>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem;">
+            <span style="font-size:0.75rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.5);">Your registration covers</span>
+            <div class="covers-list">
+              <span class="cover-chip"><i class="ph-fill ph-check-circle"></i> Participation fee</span>
+              <span class="cover-chip"><i class="ph-fill ph-check-circle"></i> Competition merchandise</span>
+              <span class="cover-chip"><i class="ph-fill ph-check-circle"></i> Team exhibition booths</span>
+              <span class="cover-chip"><i class="ph-fill ph-check-circle"></i> Meals &amp; packed supper</span>
+              <span class="cover-chip"><i class="ph-fill ph-check-circle"></i> Networking dinner</span>
+              <span class="cover-chip"><i class="ph-fill ph-check-circle"></i> Cultural excursion</span>
+            </div>
+          </div>
+
+          <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://forms.gle/o5ZpRrhMntWDM8jc8" target="_blank" rel="noopener" class="btn-pill btn-pill--hero">Register Online<div class="icon-badge"><i class="ph ph-arrow-up-right"></i></div></a>
+            <a href="mailto:wro-zimbabwe@girlsinstemtrust.org" class="registration-alt-link"><i class="ph ph-question"></i> Registration questions? Email us</a>
+          </div>
+        </div>
+        <div class="qr-code-card">
+          <img src="media/Registration_QR-Code.png" alt="Registration QR Code">
+          <p>Scan to register</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Venue + Find a Ride -->
+  <section class="section" id="venue">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Getting There</div>
+        <h2>Venue &amp; Transport</h2>
+        <p>Zimbabwe International Trade Fair (ZITF) grounds, Ascot, Bulawayo — with 20+ places to stay, plus parks, sports clubs and museums nearby. Filter the map by hotels, lodges, or things to do.</p>
+      </div>
+      <div class="venue-layout fade-up">
+        <div class="geo-map geo-map--compact" id="venueMap"></div>
+        <div class="venue-ride">
+          <div class="ride-card">
+            <div class="ride-icon"><i class="ph-fill ph-car"></i></div>
+            <h3>Find a Ride with InDrive</h3>
+            <p>InDrive is the recommended ride-hailing app for getting around Bulawayo. Set your own fare and connect with local drivers instantly.</p>
+            <div class="ride-badges">
+              <a href="https://play.google.com/store/apps/details?id=sinet.startup.inDriver" target="_blank" rel="noopener" class="store-badge"><i class="ph-fill ph-google-play-logo"></i> Google Play</a>
+              <a href="https://apps.apple.com/us/app/indrive-save-on-city-rides/id780125801" target="_blank" rel="noopener" class="store-badge"><i class="ph-fill ph-apple-logo"></i> App Store</a>
+            </div>
+          </div>
+          <div class="venue-info-list">
+            <div class="venue-info-item"><i class="ph-fill ph-map-pin" style="color:var(--primary-accent);"></i><div><strong>Venue</strong><br>Zimbabwe International Trade Fair (ZITF) grounds, Ascot, Bulawayo</div></div>
+            <div class="venue-info-item"><i class="ph-fill ph-car" style="color:var(--primary-accent);"></i><div><strong>Parking</strong><br>Ample on-site parking at the ZITF grounds</div></div>
+            <div class="venue-info-item"><i class="ph-fill ph-airplane-takeoff" style="color:var(--primary-accent);"></i><div><strong>From Airport</strong><br>Joshua Mqabuko Nkomo International &mdash; ~25 min drive</div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -326,33 +563,37 @@
   <footer class="footer" id="contact">
     <div class="container" style="text-align:center; max-width:800px;">
       <h2 style="margin-bottom:1rem;">Get in Touch</h2>
-      <div style="display:flex; justify-content:center; gap:4rem; margin:3rem 0; flex-wrap:wrap;">
+      <div style="display:flex; justify-content:center; gap:3rem; margin:3rem 0; flex-wrap:wrap;">
         <div>
           <h3 style="color:var(--primary-accent); margin-bottom:0.5rem; font-size:1.1rem;">Email</h3>
-          <p style="font-weight:500;">wro-zimbabwe@girlsinstemtrust.org</p>
+          <p style="font-weight:500;"><a href="mailto:wro-zimbabwe@girlsinstemtrust.org">wro-zimbabwe@girlsinstemtrust.org</a></p>
         </div>
         <div>
-          <h3 style="color:var(--primary-accent); margin-bottom:0.5rem; font-size:1.1rem;">Call</h3>
-          <p style="font-weight:500;">+263 719 033 438</p>
+          <h3 style="color:var(--primary-accent); margin-bottom:0.5rem; font-size:1.1rem;">WhatsApp</h3>
+          <p style="font-weight:500;"><a href="https://wa.me/263719033438" target="_blank" rel="noopener">+263 719 033 438</a><br>
+          <a href="https://wa.me/26775327512" target="_blank" rel="noopener">+267 75 327 512</a></p>
         </div>
         <div>
           <h3 style="color:var(--primary-accent); margin-bottom:0.5rem; font-size:1.1rem;">Venue</h3>
-          <p style="font-weight:500;">Bulawayo Exhibition Centre</p>
+          <p style="font-weight:500;">ZITF Exhibition Centre, Bulawayo</p>
         </div>
-      </div>
-      <div class="social-links" style="justify-content:center; margin-bottom:2rem;">
-        <a href="#"><i class="ph ph-facebook-logo"></i></a>
-        <a href="#"><i class="ph ph-instagram-logo"></i></a>
-        <a href="#"><i class="ph ph-linkedin-logo"></i></a>
       </div>
       <div style="border-top:1px solid var(--border-light); padding-top:2rem; font-size:0.9rem; color:var(--text-muted);">
         <p>WRO Special Invitational Africa 2027 is implemented by Girls in STEM Trust Zimbabwe.</p>
-        <img src="media/logo.png" alt="WRO Zimbabwe" style="height:36px; margin-top:1.5rem; opacity:0.85;">
+        <img src="media/logo-dark.png" alt="WRO Zimbabwe" style="height:36px; margin-top:1.5rem;">
       </div>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <!-- Map config -->
+  <script>
+  window.PAGE_MAP = {
+    mapEl: 'venueMap',
+    search: false
+  };
+  </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="src/js/main.js"></script>
 </body>
 
 </html>

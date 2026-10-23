@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Bulawayo – Accommodation &amp; Activities | WRO 2027</title>
+  <meta name="description" content="Hotels, accommodation and things to do in Bulawayo, Zimbabwe during the WRO Special Invitational Africa 2027, 30 June – 3 July at ZITF Bulawayo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo"><a href="../../index.html"><img src="../../media/logo.png" alt="WRO Zimbabwe 2027" class="nav-logo"></a></div>
+      <nav class="nav-links" id="navLinks">
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#challenges">Categories</a>
+        <div class="nav-dropdown">
+          <a href="side-events.html" class="nav-drop-toggle">Events<i class="ph ph-caret-down"></i></a>
+          <div class="nav-drop-menu">
+            <a href="side-events.html">All Side Events</a>
+            <a href="events/ai-forum.html">Africa AI Strategy Forum</a>
+            <a href="events/educators-summit.html">AI &amp; Robotics Summit for Educators</a>
+            <a href="events/startup-meetup.html">African Tech Start-Ups Meet-Up</a>
+            <a href="events/robotics-exhibition.html">Robotics Merchandise Exhibition</a>
+          </div>
+        </div>
+        <div class="nav-dropdown nav-drop-active">
+          <a href="accommodation.html" class="nav-drop-toggle nav-link-active">Visit BYO<i class="ph ph-caret-down"></i></a>
+          <div class="nav-drop-menu">
+            <a href="accommodation.html">Accommodation &amp; Map</a>
+            <a href="excursion.html">Matobo Hills Excursion</a>
+          </div>
+        </div>
+        <a href="merch.html">Merch</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://forms.gle/o5ZpRrhMntWDM8jc8" target="_blank" rel="noopener" class="btn-pill btn-pill--nav">Register Now<div class="icon-badge"><i class="ph ph-arrow-up-right"></i></div></a>
+      </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="page-hero" style="background-image: url('../../media/bulawayo.jpg'); background-size:cover; background-position:center;">
+    <div class="hero-overlay" style="background: linear-gradient(to bottom, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0.9) 100%);"></div>
+    <div class="page-hero-content" style="position:relative; z-index:2;">
+      <div class="sparkle-badge" style="color:rgba(255,255,255,0.85);"><i class="ph-fill ph-asterisk"></i> The City of Kings</div>
+      <h1>Explore Bulawayo</h1>
+      <p>Zimbabwe's cultural capital — where ancient history meets vibrant city life. Everything you need to know about staying and exploring during the WRO 2027.</p>
+    </div>
+  </section>
+
+  <!-- Interactive accommodation map -->
+  <section class="section" id="stay-map" style="padding-bottom:5rem;">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Around the Venue</div>
+        <h2>Accommodation Near ZITF</h2>
+        <p>More than 20 places to stay around the venue — plus parks, museums, sports clubs and day trips for open afternoons. Search or tap a chip on the map, click a pin or list item, and get instant directions from ZITF.</p>
+      </div>
+      <div class="geo-map-wrap fade-up">
+        <div class="geo-map" id="stayMap"></div>
+        <div class="geo-map-list" id="stayList">
+          <span class="map-list-title">Around ZITF · sorted by distance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured hotels -->
+  <section class="section" id="hotels" style="background-color:var(--bg-card); padding-top:5rem;">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Accommodation</div>
+        <h2>Where to Stay</h2>
+        <p>Recommended partner hotels for WRO Special Invitational Africa 2027 teams and delegations. Book early — Bulawayo fills up fast around trade fair season.</p>
+      </div>
+      <div class="hotels-grid fade-up">
+        <div class="hotel-card">
+          <div class="hotel-icon"><i class="ph-fill ph-buildings"></i></div>
+          <h3>Holiday Inn Bulawayo</h3>
+          <p class="hotel-distance"><i class="ph ph-map-pin"></i> ~2.3 km to venue · 10 min</p>
+          <!-- Holiday Inn -->
+          <p>Premium 4-star accommodation with conference facilities, high-speed internet, and a rooftop pool.</p>
+          <ul class="hotel-amenities">
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Breakfast Included</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Pool Access</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Conference Facilities</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> High-Speed WiFi</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Airport Shuttle Available</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Bulawayo" target="_blank" rel="noopener" class="btn-pill" style="margin-top:1.5rem; width:100%; justify-content:center;">Book Now<div class="icon-badge"><i class="ph ph-arrow-up-right"></i></div></a>
+        </div>
+
+        <div class="hotel-card">
+          <div class="hotel-icon"><i class="ph-fill ph-buildings"></i></div>
+          <h3>Cresta Churchill Hotel</h3>
+          <p class="hotel-distance"><i class="ph ph-map-pin"></i> ~4.9 km to venue · 15 min</p>
+          <!-- Cresta Churchill -->
+          <p>Quiet, elegant, and perfectly situated in the city centre with beautiful gardens and attentive service.</p>
+          <ul class="hotel-amenities">
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Breakfast Included</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Pool Access</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Garden &amp; Terrace</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Restaurant On-site</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Secure Parking</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/?api=1&query=Cresta+Churchill+Hotel+Bulawayo" target="_blank" rel="noopener" class="btn-pill" style="margin-top:1.5rem; width:100%; justify-content:center;">Book Now<div class="icon-badge"><i class="ph ph-arrow-up-right"></i></div></a>
+        </div>
+
+        <div class="hotel-card">
+          <div class="hotel-icon"><i class="ph-fill ph-buildings"></i></div>
+          <h3>The Bulawayo Club</h3>
+          <p class="hotel-distance"><i class="ph ph-map-pin"></i> ~1.6 km to venue · 5 min</p>
+          <!-- Bulawayo Club -->
+          <p>A historic colonial-era club offering luxury accommodation in the heart of the city — walking distance from the exhibition centre.</p>
+          <ul class="hotel-amenities">
+            <li><i class="ph ph-x" style="color:#ef4444;"></i> Breakfast Not Included</li>
+            <li><i class="ph ph-x" style="color:#ef4444;"></i> No Pool</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Historic Setting</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Bar &amp; Lounge</li>
+            <li><i class="ph ph-check" style="color:var(--primary-accent);"></i> Close to venue</li>
+          </ul>
+          <a href="https://www.google.com/maps/search/?api=1&query=The+Bulawayo+Club" target="_blank" rel="noopener" class="btn-pill" style="margin-top:1.5rem; width:100%; justify-content:center;">Book Now<div class="icon-badge"><i class="ph ph-arrow-up-right"></i></div></a>
+        </div>
+      </div>
+      <p style="text-align:center; color:var(--text-muted); font-size:0.85rem; margin-top:2rem;" class="fade-up">More options on the map above: N1 Hotel, Bulawayo Rainbow Hotel, Nesbitt Castle Hotel and guest lodges across the city.</p>
+    </div>
+  </section>
+
+  <!-- Activities -->
+  <section class="section" id="activities">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Things to Do</div>
+        <h2>Explore the City of Kings</h2>
+        <p>Bulawayo is one of Africa's most underrated destinations — rich with history, nature, and culture.</p>
+      </div>
+      <div class="activities-grid fade-up">
+
+        <div class="activity-card">
+          <div class="activity-img-placeholder" style="background: linear-gradient(135deg, #2d4a1e, #1a3a0a);">
+            <i class="ph-fill ph-mountains"></i>
+          </div>
+          <div class="activity-body">
+            <h3>Matobo National Park</h3>
+            <p>A UNESCO World Heritage Site featuring spectacular granite kopjes (balancing rocks), ancient San Bushmen rock art, and one of Africa's highest concentrations of white rhinos.</p>
+            <div class="activity-tags">
+              <span>Wildlife</span><span>UNESCO Heritage</span><span>Rock Art</span><span>Rhinos</span>
+            </div>
+            <p class="activity-distance"><i class="ph ph-map-pin"></i> ~35 km from Bulawayo CBD · 45 min drive</p>
+          </div>
+          <div style="padding:0 1.5rem 1.5rem;"><a href="excursion.html" class="btn-pill" style="width:100%; justify-content:center;">Official Excursion<div class="icon-badge"><i class="ph ph-arrow-right"></i></div></a></div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-img-placeholder" style="background: linear-gradient(135deg, #1c172b, #2d1f4e);">
+            <i class="ph-fill ph-building-apartment"></i>
+          </div>
+          <div class="activity-body">
+            <h3>Natural History Museum</h3>
+            <p>One of the largest natural history museums in Africa, home to an extraordinary collection of Zimbabwe's wildlife, geological specimens, and cultural artefacts including the famous Zimbabwe bird.</p>
+            <div class="activity-tags">
+              <span>Museum</span><span>History</span><span>Culture</span>
+            </div>
+            <p class="activity-distance"><i class="ph ph-map-pin"></i> Centenary Park, Bulawayo CBD</p>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-img-placeholder" style="background: linear-gradient(135deg, #0f3460, #16213e);">
+            <i class="ph-fill ph-train"></i>
+          </div>
+          <div class="activity-body">
+            <h3>National Railways Museum</h3>
+            <p>A unique collection of historic steam locomotives and railway history from the colonial era through Zimbabwe's independence — a fascinating piece of southern African industrial heritage.</p>
+            <div class="activity-tags">
+              <span>Heritage</span><span>Museum</span><span>Family-Friendly</span>
+            </div>
+            <p class="activity-distance"><i class="ph ph-map-pin"></i> Bulawayo Railway Station</p>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-img-placeholder" style="background: linear-gradient(135deg, #4a1c2d, #2e0f1a);">
+            <i class="ph-fill ph-fork-knife"></i>
+          </div>
+          <div class="activity-body">
+            <h3>Bulawayo Food &amp; Culture Scene</h3>
+            <p>The city is renowned for its warm hospitality and vibrant food culture. Explore local restaurants serving traditional Ndebele cuisine, street food markets, and the lively arts scene at the Zimbabwe Cultural Centre.</p>
+            <div class="activity-tags">
+              <span>Food</span><span>Culture</span><span>Markets</span><span>Arts</span>
+            </div>
+            <p class="activity-distance"><i class="ph ph-map-pin"></i> Throughout Bulawayo CBD</p>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-img-placeholder" style="background: linear-gradient(135deg, #1a3a0a, #2d4a1e);">
+            <i class="ph-fill ph-tree"></i>
+          </div>
+          <div class="activity-body">
+            <h3>Chipangali Wildlife Orphanage</h3>
+            <p>A wildlife sanctuary rescuing and rehabilitating injured and orphaned animals. See lions, cheetahs, wild dogs, and dozens of bird species up close in a conservation setting.</p>
+            <div class="activity-tags">
+              <span>Wildlife</span><span>Conservation</span><span>Family-Friendly</span>
+            </div>
+            <p class="activity-distance"><i class="ph ph-map-pin"></i> ~20 km from Bulawayo CBD</p>
+          </div>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-img-placeholder" style="background: linear-gradient(135deg, #1c3a2d, #0f2e1a);">
+            <i class="ph-fill ph-soccer-ball"></i>
+          </div>
+          <div class="activity-body">
+            <h3>Bulawayo Sports &amp; Recreation</h3>
+            <p>The city has a proud sporting heritage. Catch a local football match at Barbourfields Stadium, visit the Bulawayo Athletic Club, or explore the parks and open spaces that give the city its leafy, spacious character.</p>
+            <div class="activity-tags">
+              <span>Sport</span><span>Recreation</span><span>Parks</span>
+            </div>
+            <p class="activity-distance"><i class="ph ph-map-pin"></i> Various locations</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting There -->
+  <section class="section" id="getting-there" style="background-color:var(--bg-card);">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="sparkle-badge"><i class="ph-fill ph-asterisk"></i> Travel</div>
+        <h2>Getting to Bulawayo</h2>
+        <p>Arrival and set-up day: Tuesday 29 June 2027. Pack a warm layer — July is cool in Bulawayo.</p>
+      </div>
+      <div class="travel-grid fade-up">
+        <div class="travel-card">
+          <div class="side-event-icon"><i class="ph-fill ph-airplane"></i></div>
+          <h3>By Air</h3>
+          <p>Joshua Mqabuko Nkomo International Airport (BUQ) serves Bulawayo with direct flights from Johannesburg (SA), Harare, and other regional hubs. Flight time from Johannesburg: ~1 hour 30 min.</p>
+        </div>
+        <div class="travel-card">
+          <div class="side-event-icon"><i class="ph-fill ph-bus"></i></div>
+          <h3>By Road</h3>
+          <p>Bulawayo is well connected by road. From Johannesburg, the drive via Beit Bridge is approximately 6–7 hours. From Harare, approximately 4–5 hours on the A5 highway.</p>
+        </div>
+        <div class="travel-card">
+          <div class="side-event-icon"><i class="ph-fill ph-train"></i></div>
+          <h3>By Rail</h3>
+          <p>National Railways of Zimbabwe operates overnight train services connecting Bulawayo to Harare and Victoria Falls — a scenic and comfortable option for longer journeys.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container" style="text-align:center;">
+      <p style="color:var(--text-muted); font-size:0.9rem;">WRO Special Invitational Africa 2027 · 30 June – 3 July 2027 · ZITF Bulawayo &nbsp;·&nbsp; Implemented by Girls in STEM Trust Zimbabwe</p>
+      <img src="../../media/logo-dark.png" alt="WRO Zimbabwe" style="height:40px; margin-top:1.5rem;">
+    </div>
+  </footer>
+
+  <!-- Map config -->
+  <script>
+  window.PAGE_MAP = {
+    mapEl: 'stayMap',
+    listEl: 'stayList'
+  };
+  </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
